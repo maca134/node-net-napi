@@ -1,0 +1,6 @@
+
+managed-src/.vs/*
+managed-src/NetNapi.Managed/NetNapi.Managed.csproj.user
+managed-src/packages/*
+node_modules/*
+src/test.ts

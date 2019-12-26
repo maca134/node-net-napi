@@ -1,0 +1,23 @@
+{
+	"name": "net-napi",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"clean": "rimraf ./managed ./build ./dist ./package ./managed-src/NetNapi.Managed/bin ./managed-src/NetNapi.Managed/obj",
+		"install": "node-gyp-build && copyfiles -u 1 managed/net-napi.net_x86.dll managed/net-napi.net_x64.dll build/Release",
+		"build": "npm run clean && tsc && build.bat && package.bat"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bindings": "^1.5.0",
+		"copyfiles": "^2.1.1",
+		"node-gyp-build": "^4.2.0"
+	},
+	"devDependencies": {
+		"@types/node": "^13.1.1",
+		"rimraf": "^3.0.0",
+		"typescript": "^3.7.4"
+	}
+}
