@@ -7,7 +7,7 @@
 		"clean": "rimraf ./managed ./build ./dist ./package ./managed-src/NetNapi.Managed/bin ./managed-src/NetNapi.Managed/obj",
 		"install": "node-gyp-build && copyfiles -u 1 managed/net-napi.net_x86.dll managed/net-napi.net_x64.dll build/Release",
 		"build": "npm run clean && tsc && build.bat && package.bat",
-		"postversion": "git push && npm run build && cd package && npm publish && npm run clean"
+		"postversion": "git push && npm run build && cd package && npm publish && cd .. && npm run clean"
 	},
 	"author": "maca134@googlemail.com",
 	"license": "MIT",
