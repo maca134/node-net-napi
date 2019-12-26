@@ -1,6 +1,6 @@
 {
 	"name": "@maca134/node-net-napi",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Run CLR dlls in node",
 	"main": "index.js",
 	"scripts": {
