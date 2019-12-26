@@ -1,15 +1,26 @@
 {
-	"name": "net-napi",
+	"name": "node-net-napi",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Run CLR dlls in node",
 	"main": "index.js",
 	"scripts": {
 		"clean": "rimraf ./managed ./build ./dist ./package ./managed-src/NetNapi.Managed/bin ./managed-src/NetNapi.Managed/obj",
 		"install": "node-gyp-build && copyfiles -u 1 managed/net-napi.net_x86.dll managed/net-napi.net_x64.dll build/Release",
-		"build": "npm run clean && tsc && build.bat && package.bat"
+		"build": "npm run clean && tsc && build.bat && package.bat",
+		"postversion": "git push && npm run build && npm publish --prefix=./package"
 	},
-	"author": "",
-	"license": "ISC",
+	"author": "maca134@googlemail.com",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/maca134/node-net-napi.git"
+	},
+	"keywords": [
+		"native",
+		".net",
+		"clr",
+		"managed"
+	],
 	"dependencies": {
 		"bindings": "^1.5.0",
 		"copyfiles": "^2.1.1",
