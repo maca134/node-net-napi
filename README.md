@@ -48,13 +48,13 @@ namespace ExampleDll
         public const ulong NapiAutoLength = ulong.MaxValue;
 
 	[DllImport("node.exe", EntryPoint = "napi_create_string_utf8")]
-        public static extern NapiStatus napi_create_string_utf8(IntPtr env, [MarshalAs(UnmanagedType.LPStr)] string name, ulong length, out IntPtr res);
+        public static extern int napi_create_string_utf8(IntPtr env, [MarshalAs(UnmanagedType.LPStr)] string name, ulong length, out IntPtr res);
 
         [DllImport("node.exe", EntryPoint = "napi_create_object")]
-        public static extern NapiStatus napi_create_object(IntPtr env, out IntPtr res);
+        public static extern int napi_create_object(IntPtr env, out IntPtr res);
 
         [DllImport("node.exe", EntryPoint = "napi_set_named_property")]
-        public static extern NapiStatus napi_set_named_property(IntPtr env, IntPtr obj, [MarshalAs(UnmanagedType.LPStr)] string name, IntPtr val);
+        public static extern int napi_set_named_property(IntPtr env, IntPtr obj, [MarshalAs(UnmanagedType.LPStr)] string name, IntPtr val);
         		
         public static IntPtr Init(IntPtr env)
         {
